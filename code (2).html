@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Custom colors */
+    /*Colores personalizados*/
     :root {
       --color-skyblue: #0ea5e9;
       --color-black: #000000;
@@ -19,12 +19,13 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Smooth transition for interactive elements */
+   /* Transición suave para elementos interactivos */
     .transition-smooth {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Logo styling */
+   
+/* Estilo del logotipo */
     #logo {
       font-weight: 800;
       font-size: 1.75rem;
@@ -32,14 +33,14 @@
       user-select: none;
     }
 
-    /* Navbar link active style */
+  /* Estilo activo del enlace de la barra de navegación */
     .nav-link-active {
       border-b-4: solid var(--color-skyblue);
       color: var(--color-skyblue);
       font-weight: 700;
     }
 
-    /* Seat styles */
+  /*Estilos de asientos*/
     .seat {
       width: 32px;
       height: 32px;
@@ -70,13 +71,13 @@
     }
 
     .seat.taken {
-      background-color: #94a3b8; /* gray */
+      background-color: #94a3b8; /* gris */
       border-color: #64748b;
       cursor: not-allowed;
       color: #334155;
     }
 
-    /* Notifications */
+ /* Notificaciones */
     .notification {
       background: linear-gradient(90deg, #38bdf8, #0284c7);
       color: white;
@@ -86,7 +87,7 @@
       box-shadow: 0 4px 8px rgb(14 165 233 / 0.3);
     }
 
-    /* Modal backdrop */
+    /* Fondo modal */
     .modal-backdrop {
       backdrop-filter: blur(8px) saturate(150%);
       background-color: rgba(15, 23, 42, 0.7);
@@ -101,7 +102,7 @@
       z-index: 50;
     }
 
-    /* Modal container */
+    /* Contenedor modal */
     .modal-content {
       background: linear-gradient(145deg, #e0f7ff, #c0e9ff);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -113,7 +114,7 @@
       position: relative;
     }
 
-    /* Close button */
+    /*Botón cerrar*/
     .modal-close {
       position: absolute;
       top: 0.75rem;
@@ -125,7 +126,7 @@
       user-select: none;
     }
 
-    /* Selection box styles */
+    /* Estilos de cuadro de selección */
     .selection-box {
       background: linear-gradient(145deg, #e0f7ff, #bfdbfe);
       border: 2px solid var(--color-skyblue);
@@ -134,7 +135,7 @@
       margin-bottom: 1rem;
     }
 
-    /* Time slot styles */
+    /* Estilos de franjas horarias */
     .time-slot {
       background-color: #e0f2fe;
       border: 1.5px solid var(--color-skyblue);
@@ -157,7 +158,7 @@
       color: var(--color-white);
     }
 
-    /* Focus outlines */
+    /* Esquemas de enfoque */
     a:focus,
     button:focus,
     input:focus,
@@ -172,7 +173,7 @@
 
 <body class="bg-white text-black min-h-screen flex flex-col">
 
-  <!-- Navbar -->
+  <!-- Barra de navegación -->
   <header class="sticky top-0 bg-white shadow-md z-40">
     <nav class="container mx-auto flex justify-between items-center py-4 px-4 md:px-0" aria-label="Primary Navigation">
       <div id="logo" class="select-none cursor-default">Y&V</div>
@@ -194,7 +195,7 @@
         </button>
       </div>
     </nav>
-    <!-- Mobile menu -->
+    <!-- Menú móvil -->
     <div id="mobileMenu" class="hidden md:hidden bg-white shadow-md">
       <ul class="flex flex-col p-4 space-y-4 font-semibold text-gray-800 text-lg">
         <li><button data-page="home" class="nav-link transition-smooth hover:text-sky-500 w-full text-left">Inicio</button></li>
@@ -205,13 +206,13 @@
     </div>
   </header>
 
-  <!-- Main content container -->
+  <!-- Contenedor de contenido principal -->
   <main class="flex-grow container mx-auto p-4 md:p-8 max-w-6xl">
 
-    <!-- Pages container -->
+    <!-- Contenedor de páginas -->
     <section id="pages">
 
-      <!-- Home page -->
+      <!-- Página de inicio -->
       <article id="page-home" class="page" role="main" aria-label="Inicio">
         <header class="mb-8">
           <h1 class="text-4xl md:text-5xl font-extrabold mb-4" style="color: var(--color-skyblue);">Bienvenido a Cine Y&V</h1>
@@ -230,25 +231,25 @@
         </section>
       </article>
 
-      <!-- Cartelera page -->
+      <!-- Página de Cartelera -->
       <article id="page-cartelera" class="page hidden" role="main" aria-label="Cartelera - Películas en cartelera">
         <header class="mb-6">
           <h2 class="text-3xl font-bold mb-3" style="color: var(--color-skyblue);">Cartelera Actual</h2>
           <p class="text-gray-700 max-w-3xl">Selecciona una película para ver detalles y comprar boletos.</p>
         </header>
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="movieGrid">
-          <!-- Movies will be rendered here -->
+          <!-- Las películas se renderizarán aquí -->
         </section>
       </article>
 
-      <!-- Comprar Boletos page -->
+      <!-- Página de Comprar Boletos -->
       <article id="page-comprar" class="page hidden" role="main" aria-label="Compra de boletos">
         <header class="mb-6">
           <h2 class="text-3xl font-bold mb-3" style="color: var(--color-skyblue);">Comprar Boletos</h2>
           <p class="text-gray-700 max-w-3xl mb-4">Selecciona tu película, elige tus asientos y realiza la compra.</p>
         </header>
 
-        <!-- Selection Summary Box -->
+        <!-- Cuadro de resumen de selección -->
         <div id="selectionBox" class="selection-box max-w-3xl mx-auto mb-6 hidden">
           <h3 class="font-bold text-lg mb-2" style="color: var(--color-skyblue);">Tu Selección</h3>
           <div id="selectionContent"></div>
@@ -281,7 +282,7 @@
         </form>
       </article>
 
-      <!-- Promociones page -->
+      <!-- Página de promociones -->
       <article id="page-promociones" class="page hidden" role="main" aria-label="Promociones y ofertas">
         <header class="mb-6">
           <h2 class="text-3xl font-bold mb-3" style="color: var(--color-skyblue);">Promociones</h2>
@@ -305,7 +306,7 @@
     </section>
   </main>
 
-  <!-- Login Modal -->
+  <!-- Modal de inicio de sesión -->
   <div id="loginModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="loginLabel" aria-describedby="loginDesc">
     <div class="modal-content">
       <button id="closeLogin" class="modal-close" aria-label="Cerrar ventana de login">&times;</button>
@@ -328,7 +329,7 @@
 
   <script>
     (() => {
-      // Movie data
+        // datos de la  pelicula
       const movies = [
         {
           id: 'invasion-estelar',
@@ -392,7 +393,7 @@
         }
       ];
 
-      // Elements
+      // Elementos
       const navLinks = document.querySelectorAll('.nav-link');
       const pages = document.querySelectorAll('.page');
       const loginModal = document.getElementById('loginModal');
@@ -413,7 +414,7 @@
       const selectionContent = document.getElementById('selectionContent');
       const cancelSelection = document.getElementById('cancelSelection');
 
-      // State
+      // Estado
       let currentPage = 'home';
       let selectedSeats = new Set();
       let takenSeats = new Set(['A3', 'B5', 'C7']); // example taken seats to show unavailable
@@ -421,17 +422,17 @@
       let selectedTime = '';
       let currentSelection = null;
 
-      // Seat rows and cols for map
+      // Filas y columnas de asientos para el mapa
       const rows = ['A', 'B', 'C', 'D', 'E', 'F'];
       const cols = 8;
 
-      // Render movies in cartelera
+      // Renderizar películas en cartelera
       function renderMovies() {
         movieGrid.innerHTML = '';
         movieSelect.innerHTML = '<option value="" disabled selected>Selecciona una película</option>';
         
         movies.forEach(movie => {
-          // Add to movie grid
+          // Añadir a la cuadrícula de películas
           const movieCard = document.createElement('article');
           movieCard.className = 'rounded-xl shadow-lg overflow-hidden transition-smooth hover:shadow-xl bg-white';
           movieCard.innerHTML = `
@@ -453,7 +454,7 @@
           `;
           movieGrid.appendChild(movieCard);
 
-          // Add to select dropdown
+          // Agregar al menú desplegable de selección
           const option = document.createElement('option');
           option.value = movie.id;
           option.textContent = movie.title;
@@ -461,12 +462,12 @@
         });
       }
 
-      // Toggle mobile menu
+      // Activar o desactivar el menú móvil
       menuToggle.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
 
-      // Navigation function to show pages
+      // Función de navegación para mostrar páginas
       function showPage(page) {
         currentPage = page;
         pages.forEach(p => {
@@ -476,15 +477,15 @@
           link.classList.toggle('text-sky-600', link.dataset.page === page);
           link.classList.toggle('font-bold', link.dataset.page === page);
         });
-        // Close mobile menu on navigation
+        // Cerrar el menú móvil en la navegación
         if (!mobileMenu.classList.contains('hidden')) {
           mobileMenu.classList.add('hidden');
         }
-        // Reset purchase message on purchase page
+        // Restablecer el mensaje de compra en la página de compra
         if (page === 'comprar') {
           purchaseMessage.classList.add('hidden');
           purchaseMessage.textContent = '';
-          // Reset form and selections on navigation to comprar
+          // Restablecer formulario y selecciones en la navegación para comprar
           selectedSeats.clear();
           selectedTime = '';
           renderSeats();
@@ -504,7 +505,7 @@
         });
       });
 
-      // Login modal toggling
+      // Alternancia del modo de inicio de sesión
       loginBtn.addEventListener('click', () => {
         loginModal.classList.remove('hidden');
         document.getElementById('username').focus();
@@ -515,14 +516,14 @@
         loginForm.reset();
       });
       loginModal.addEventListener('click', (e) => {
-        if (e.target === loginModal) { // click outside modal content closes it
+        if (e.target === loginModal) { // Al hacer clic fuera del contenido modal, se cierra.
           loginModal.classList.add('hidden');
           loginError.classList.add('hidden');
           loginForm.reset();
         }
       });
 
-      // Login form submission - dummy validations with success handling
+      // Envío del formulario de inicio de sesión: validaciones ficticias con gestión de éxito
       loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
         loginError.classList.add('hidden');
@@ -533,13 +534,13 @@
           loginError.classList.remove('hidden');
           return;
         }
-        // Simulate successful login
+        // Simular inicio de sesión exitoso
         loginModal.classList.add('hidden');
         loginForm.reset();
         alert(`Bienvenido, ${username}!`);
       });
 
-      // Render time slots
+      // Renderizar franjas horarias
       function renderTimeSlots() {
         timeSlots.innerHTML = '';
         if (!selectedMovie) {
@@ -566,7 +567,7 @@
             selectedTime = time;
             renderTimeSlots();
             updateSelectionBox();
-            // Show alert when time is selected
+            // Mostrar alerta cuando se selecciona la hora
             if (selectedMovie && selectedTime) {
               const movieTitle = movies.find(m => m.id === selectedMovie)?.title || '';
               alert(`¡Horario guardado! ${movieTitle} - ${selectedTime}`);
@@ -576,7 +577,7 @@
         });
       }
 
-      // Update selection box
+      // Cuadro de selección de actualización
       function updateSelectionBox() {
         if (!selectedMovie || !selectedTime) {
           selectionBox.classList.add('hidden');
@@ -614,7 +615,7 @@
         selectionBox.classList.remove('hidden');
       }
 
-      // Cancel selection
+      // Cancelar selección
       cancelSelection.addEventListener('click', () => {
         selectedMovie = '';
         selectedTime = '';
@@ -627,7 +628,7 @@
         alert('Selección cancelada');
       });
 
-      // Seat map rendering function
+      // Función de representación del mapa de asientos
       function renderSeats() {
         seatMap.innerHTML = '';
         for (let r = 0; r < rows.length; r++) {
@@ -672,7 +673,7 @@
 
       renderSeats();
 
-      // Movie select change - synchronize with navigation from Cartelera page
+      // Cambio de selección de película: sincronizar con la navegación desde la página de Cartelera
       document.addEventListener('click', (e) => {
         if (e.target.classList.contains('btn-select-movie')) {
           selectedMovie = e.target.dataset.movie || '';
@@ -686,7 +687,7 @@
         }
       });
 
-      // Reset seat selection if movie changed
+      // Restablecer la selección de asientos si la película cambió
       movieSelect.addEventListener('change', () => {
         selectedMovie = movieSelect.value;
         selectedTime = '';
@@ -696,7 +697,7 @@
         updateSelectionBox();
       });
 
-      // Ticket form submission
+      // Envío del formulario de ticket
       ticketForm.addEventListener('submit', e => {
         e.preventDefault();
         const movie = movieSelect.value;
@@ -713,15 +714,15 @@
           return;
         }
         
-        // Get movie title
+        // Obtener título de la película
         const movieObj = movies.find(m => m.id === movie);
         const movieTitle = movieObj ? movieObj.title : movie;
         
-        // For demo, just show confirmation message
+        // Para la demostración, solo muestre el mensaje de confirmación
         purchaseMessage.textContent = `Compra exitosa para "${movieTitle}" - ${selectedTime} - Asientos: ${[...selectedSeats].join(', ')}`;
         purchaseMessage.classList.remove('hidden');
         
-        // Reset everything
+        // Restablecer todo
         selectedMovie = '';
         selectedTime = '';
         selectedSeats.clear();
@@ -732,7 +733,7 @@
         updateSelectionBox();
       });
 
-      // Initialize
+      // Inicializar
       renderMovies();
       showPage('home');
     })();
