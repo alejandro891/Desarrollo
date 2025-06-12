@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Cine Y&V - Compra de Boletos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /*Colores personalizados*/
+    :root {
+      --color-skyblue: #0ea5e9;
+      --color-black: #000000;
+      --color-white: #ffffff;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+   /* Transición suave para elementos interactivos */
+    .transition-smooth {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+   
+/* Estilo del logotipo */
+    #logo {
+      font-weight: 800;
+      font-size: 1.75rem;
+      color: var(--color-skyblue);
+      user-select: none;
+    }
+
+  /* Estilo activo del enlace de la barra de navegación */
+    .nav-link-active {
+      border-b-4: solid var(--color-skyblue);
+      color: var(--color-skyblue);
+      font-weight: 700;
+    }
+
+  /*Estilos de asientos*/
+    .seat {
+      width: 32px;
+      height: 32px;
+      margin: 4px;
+      border-radius: 6px;
+      background-color: #e0f2fe; /* lighter skyblue */
+      border: 1.5px solid var(--color-skyblue);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      user-select: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .seat:hover {
+      background-color: var(--color-skyblue);
+      color: var(--color-white);
+      transform: scale(1.1);
+    }
+
+    .seat.selected {
+      background-color: var(--color-black);
+      color: var(--color-white);
+      cursor: default;
+    }
+
+    .seat.taken {
+      background-color: #94a3b8; /* gris */
+      border-color: #64748b;
+      cursor: not-allowed;
+      color: #334155;
+    }
+
+ /* Notificaciones */
+    .notification {
+      background: linear-gradient(90deg, #38bdf8, #0284c7);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 8px rgb(14 165 233 / 0.3);
+    }
+
+
